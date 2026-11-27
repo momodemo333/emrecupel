@@ -1,0 +1,256 @@
+# Copyright (C) 2026 E-dem SRL <support@e-dem.com>
+# GPL-3.0-or-later
+# emRecupel — français
+
+# Module
+Module491415Name=emRecupel
+Module491415Desc=Cotisation Recupel (DEEE belge) sur devis, commandes et factures, et aide à la déclaration
+Permission49141501=Consulter les données Recupel (barème, codes des produits, analyse des documents)
+Permission49141502=Classer les produits et recalculer la cotisation Recupel des documents
+Permission49141503=Configurer emRecupel et importer des barèmes Recupel
+Permission49141504=Consulter le rapport de déclaration Recupel
+Recupel=Recupel
+EmrecupelSetup=Configuration emRecupel
+EmrecupelCatalog=Barème Recupel
+License=Licence
+Publisher=Éditeur
+
+# Menus et onglets
+RecupelProductsToClassify=Produits à classer
+RecupelImportClassification=Import / export CSV
+RecupelScale=Barème
+RecupelSwitchAssistant=Assistant de bascule
+RecupelDeclaration=Déclaration Recupel
+
+# Extrafields
+RecupelRole=Rôle Recupel
+RecupelRoleHelp=Revendeur : le client revend des appareils électriques ; pour un appareil à cotisation « tout compris », la cotisation doit alors figurer séparément sur la facture. Utilisateur final : entreprise ou particulier qui utilise l'appareil. Exempté : aucune cotisation (par exemple membre Recupel qui exporte).
+RecupelRoleEnduser=Utilisateur final
+RecupelRoleReseller=Revendeur d'appareils électriques
+RecupelRoleExempt=Exempté de cotisation
+RecupelDisplayOverride=Affichage de la cotisation Recupel
+RecupelDisplayOverrideHelp=Vide : règle de la configuration. Ce choix ne peut pas supprimer la ligne séparée obligatoire pour un revendeur.
+RecupelLink=Lien Recupel
+RecupelCategory=Catégorie Recupel
+RecupelUnits=Appareils par unité vendue
+
+# Rendus
+RecupelModeLine=Ligne séparée
+RecupelModeIncluded=Incluse (mention sous la ligne + total en pied)
+RecupelModeFooter=Incluse (total en pied seulement)
+RecupelModesExplained=Ligne séparée : une ligne « Cotisation Recupel » sous le produit, ajoutée au total. Incluse : le prix du produit contient déjà la cotisation ; le PDF indique « Dont cotisation Recupel : x,xx € TVAC/pièce » sous la ligne et le total en pied de page. Rien n'est ajouté au total dans les deux modes « incluse ».
+RecupelMentionLine=Dont cotisation Recupel : %s TVAC/pièce (cat. %s)
+RecupelMentionFooter=Cotisations Recupel incluses dans les prix : %s TVAC
+RecupelMentionUsed=Cotisation Recupel incluse (appareil d'occasion déjà mis sur le marché belge).
+
+# Produit
+RecupelStatus=Statut Recupel
+RecupelStatusNone=À classer
+RecupelStatusSubject=Soumis
+RecupelStatusExempt=Non soumis
+RecupelStatusHelp=« Non soumis » : accessoire fourni avec un appareil, composant sans fonction propre (mémoire, carte mère, clé USB), batterie domestique, panneau solaire, service… Cela distingue un produit hors champ d'un produit pas encore classé.
+RecupelOrigin=Origine
+RecupelOriginHelp=Importé ou produit : vous le mettez sur le marché belge et le déclarez à Recupel. Acheté en Belgique : votre fournisseur belge vous a facturé la cotisation, vous la répercutez sans la déclarer. Occasion belge : déjà mis sur le marché belge, il est interdit de facturer la cotisation.
+RecupelOriginImport=Importé ou produit
+RecupelOriginLocal=Acheté en Belgique (cotisation payée)
+RecupelOriginUsed=Occasion belge (non facturable)
+RecupelOriginDefault=Défaut de l'entreprise (%s)
+RecupelOriginDefaultShort=Défaut de l'entreprise
+RecupelOriginKeep=Origine inchangée
+RecupelWeight=Poids déclarable
+RecupelWeightKg=Poids (kg)
+RecupelWeightHelp=Poids net d'un appareil professionnel, à déclarer avec le nombre : produit et accessoires vendus sous la même référence, câbles compris, sans emballage, manuel ni batteries. Vide : poids de la fiche produit.
+RecupelWeightProduct=poids de la fiche produit
+RecupelWeightMissing=Poids manquant sur certains produits
+RecupelCodes=Codes Recupel
+RecupelCode=Code
+RecupelUse=Usage
+RecupelUseHousehold=Ménager
+RecupelUsePro=Professionnel
+RecupelFeeType=Type de cotisation
+RecupelFeeAllin=tout compris
+RecupelFeeAdmin=administrative
+RecupelUnitsHelp=Nombre d'appareils soumis par unité vendue : 4 pour un luminaire livré avec 4 lampes LED (code de la lampe), 3 pour un kit de 3 caméras autonomes…
+RecupelRateAt=Tarif au %s
+RecupelNoCode=Aucun code Recupel
+RecupelAddCode=Ajouter le code
+RecupelKitHelp=Un luminaire porte la cotisation de l'armature et de chaque lampe LED ou à décharge incorporée ; les appareils d'un kit capables de fonctionner seuls sont déclarés séparément. Ajoutez un code par type d'appareil.
+RecupelExemptNoCode=Produit non soumis : aucune cotisation n'est appliquée.
+RecupelInheritedFromParent=Cette variante n'a pas de classement propre : elle reprend celui du produit parent.
+RecupelServiceNotice=Ce produit est un service. Recupel ne concerne que les équipements électriques et électroniques.
+RecupelOfficialSearch=Moteur de recherche officiel Recupel
+
+# Produits à classer
+RecupelClassifyHelp=Cochez des produits puis appliquez un code Recupel, le statut « non soumis » ou une origine. Le filtre par catégorie Dolibarr permet de classer toute une famille en une fois (« tout ce qui est dans Laptops = 2.4 »). Rien n'est classé automatiquement : vérifiez chaque code dans la liste officielle.
+RecupelSoldUnclassified=%s produits vendus en %s ne sont pas encore classés.
+RecupelShowThem=Les afficher
+RecupelOnlyGoods=Biens seulement
+RecupelOnlySoldThisYear=Vendus cette année
+RecupelSoldThisYear=Vendus cette année
+RecupelMassAssign=Affecter le code
+RecupelMassExempt=Marquer « non soumis »
+RecupelMassOrigin=Changer l'origine
+RecupelMassUnclassify=Remettre « à classer »
+RecupelReplaceCodes=remplacer les codes existants
+RecupelMassDone=%s produits mis à jour
+
+# Import
+RecupelImportHelp=Fichier CSV séparé par des points-virgules, en UTF-8 : ref;code;quantité;origine. Plusieurs lignes pour la même référence donnent plusieurs codes. Code « exempt » (ou « non soumis ») = non soumis. Origine : import, local, used (vide = défaut de l'entreprise). Les codes du fichier remplacent ceux du produit.
+RecupelCsvFile=Fichier
+RecupelCsvPaste=Ou coller le contenu
+RecupelCheckFile=Contrôler
+RecupelCheckResult=Résultat du contrôle
+RecupelCheckLines=%s lignes lues.
+RecupelCheckOk=Fichier valide : %s produits seront mis à jour.
+RecupelImportDone=%s produits classés.
+RecupelImportPartial=%s produits classés, certaines lignes ont été refusées.
+RecupelExportClassification=Exporter le classement des produits (CSV)
+
+# Barème
+RecupelScaleValidAt=Barème en vigueur le
+RecupelScaleOf=Barème du %s
+RecupelScaleSources=Source : listes des appareils publiées par Recupel.
+RecupelHistoryOf=Historique de %s
+RecupelPreviousScale=Barème précédent (TVAC)
+RecupelImportScale=Importer un barème
+RecupelImportScaleHelp=Pour un barème annoncé par Recupel (1er janvier ou 1er juillet) sans attendre une mise à jour du module. Le nouveau tarif ferme le précédent la veille de sa date de début ; rien n'est effacé. L'import est refusé en entier à la moindre erreur.
+RecupelApplyScale=Importer ce barème
+RecupelScaleFileErrors=Le fichier contient des erreurs.
+RecupelScaleFileEmpty=Aucune ligne de barème dans le fichier.
+RecupelScaleImported=Barème importé : %s catégories, %s tarifs.
+RecupelScaleImportFailed=Import annulé.
+RecupelScaleStart=Date de début
+RecupelScaleCodes=Codes avec un tarif
+RecupelScaleExpected92=la liste officielle compte 92 codes
+RecupelScaleNewCodes=Nouveaux codes
+RecupelScaleRemovedCodes=Codes absents du fichier
+RecupelScaleChangedCodes=Codes dont le tarif change
+RecupelScaleBigChanges=Variations de plus de 50 %
+RecupelNoScale=Aucun barème chargé.
+
+# Assistant de bascule
+RecupelSwitchTo=Barème de destination
+RecupelSwitchSummary=Au %s : %s codes changent de tarif, %s restent identiques, %s codes nouveaux ou supprimés.
+RecupelSwitchMovedCodes=Barème 2027 : les lave-vaisselle passent de 4.1.2 (cuisson) à 4.1.1 (lavage et séchage) ; le code 1.50 (froid professionnel) passe en cotisation tout compris. Vérifiez les produits concernés.
+RecupelSwitchCodes=Codes qui changent
+RecupelSwitchProducts=Produits du catalogue dont la cotisation change
+RecupelSwitchNoProduct=Aucun produit classé n'est concerné.
+RecupelFeePerUnitAt=Cotisation par unité au %s (TVAC)
+RecupelDifference=Écart
+RecupelCheckDishwasher=Lave-vaisselle ? Il passe en 4.1.1 en 2027.
+RecupelSwitchDocuments=Devis et commandes ouverts concernés
+RecupelSwitchDocumentsHelp=Devis et commandes datés d'avant la bascule, pas encore facturés, qui contiennent ces produits. À la facturation, la cotisation est recalculée au tarif de la date de la facture.
+RecupelFeeAtDocDate=Cotisation à la date du document
+RecupelFeeAtSwitch=Cotisation après la bascule
+
+# Onglet document
+RecupelDeliveryCountry=Pays de livraison
+RecupelExportNoFee=hors Belgique : pas de cotisation
+RecupelScaleDate=Date du barème appliqué
+RecupelNotDraft=Document validé : il n'est jamais modifié par le module.
+RecupelUnitRateTTC=Tarif unitaire TVAC
+RecupelAmountTTC=Montant TVAC
+RecupelDecision=Décision
+RecupelDisplay=Affichage
+RecupelLinePresent=Ligne présente
+RecupelLineMissing=Ligne absente : utilisez « Recalculer »
+RecupelNothingOnDocument=Aucun produit classé sur ce document.
+RecupelTotalAsLines=Cotisations en lignes séparées
+RecupelTotalIncluded=Cotisations incluses dans les prix
+RecupelRecalculate=Recalculer la cotisation Recupel
+RecupelRecalculateHelp=Recrée les lignes de cotisation selon les produits, le client et la date, y compris celles supprimées à la main.
+RecupelRecalculated=Recalcul terminé (%s modifications).
+RecupelRecalculateError=Erreur pendant le recalcul : %s
+RecupelLedgerOfInvoice=Appareils enregistrés pour la déclaration
+RecupelLedgerEmpty=Aucun appareil enregistré pour cette facture.
+RecupelDeclaredUnits=Appareils
+RecupelDecision_apply=Cotisation due
+RecupelDecision_doctype_disabled=Type de document désactivé
+RecupelDecision_not_a_product_line=Pas une ligne produit
+RecupelDecision_no_category=Pas de code
+RecupelDecision_category_inactive=Code inconnu ou désactivé
+RecupelDecision_no_tariff=Pas de tarif à cette date
+RecupelDecision_customer_exempt=Client exempté
+RecupelDecision_export=Hors Belgique
+RecupelDecision_used_goods=Occasion belge : non facturable
+RecupelDecision_opted_out=Retirée à la main
+RecupelDecision_zero_qty=Quantité nulle
+RecupelDecision_product_exempt=Produit non soumis
+RecupelBucket=Colonne de déclaration
+RecupelBucket_market=Mis sur le marché
+RecupelBucket_returnable=Returnable (export)
+RecupelBucket_control=Acheté et vendu en Belgique (contrôle)
+RecupelBucket_none=Non déclaré
+
+# Déclaration
+RecupelQuarter=Trimestre
+RecupelProfile=Profil de l'entreprise
+RecupelProfileReseller=Revendeur
+RecupelProfileResellerHelp=vous achetez en Belgique et vendez en Belgique ; vous répercutez la cotisation sans rien déclarer (état de contrôle seulement).
+RecupelProfileExporter=Revendeur qui exporte
+RecupelProfileExporterHelp=affilié à Recupel pour se faire rembourser la cotisation des appareils achetés en Belgique puis vendus à l'étranger (colonne « Returnable »).
+RecupelProfileProducer=Importateur ou fabricant
+RecupelProfileProducerHelp=membre Recupel : vous déclarez les appareils importés ou produits mis sur le marché belge, et les exports d'appareils achetés en Belgique.
+RecupelDeadline=Échéance de la déclaration
+RecupelDeadlineHelp=le 20 du mois qui suit la période
+RecupelReportHypotheses=Hypothèses du calcul : factures validées seulement (brouillons exclus, facture remplacée exclue au profit de la facture de remplacement), avoirs déduits, date de facture comme fait générateur, origine et codes enregistrés à la validation de chaque facture, pays du contact de livraison ou à défaut du client, montant estimé au tarif de la date de chaque facture.
+RecupelReportUnclassified=%s produits vendus sur la période ne sont pas classés : ils ne figurent pas dans ce rapport.
+RecupelAdminCapReached=Les cotisations administratives de %2$s atteignent %1$s : elles sont plafonnées à 10 000 € par an et par membre.
+RecupelBlockHousehold=Appareils ménagers
+RecupelBlockProfessional=Appareils professionnels
+RecupelBroughtToMarket=Mis sur le marché (nombre)
+RecupelReturnable=Returnable (nombre)
+RecupelSoldBePassedOn=Achetés et vendus en Belgique
+RecupelSoldBePassedOnHelp=Appareils achetés à un fournisseur belge et revendus en Belgique : la cotisation a été répercutée, rien à déclarer.
+RecupelEstimatedHT=Montant estimé HTVA
+RecupelFeesPassedOnHT=Cotisations répercutées HTVA
+RecupelTotalDue=Cotisations estimées (mis sur le marché)
+RecupelTotalRefund=Remboursement estimé (Returnable)
+RecupelNetEstimate=Montant net estimé
+RecupelResellerNoDeclaration=Profil « revendeur » : vous n'avez pas de déclaration à faire. Ce tableau est un état de contrôle des cotisations répercutées à vos clients ; comparez-le aux cotisations facturées par vos fournisseurs.
+RecupelDetailOf=Détail du code %s — %s
+RecupelExportCsv=Exporter en CSV
+RecupelRebuildLedger=Reconstruire la période
+RecupelRebuildLedgerHelp=« Reconstruire » relit toutes les factures validées de la période avec le classement actuel des produits (après un classement tardif ou une mise à jour depuis la version 1).
+RecupelLedgerRebuilt=%s factures relues, %s lignes enregistrées.
+RecupelPortalHelp=La déclaration se saisit sur le portail Recupel :
+RecupelDisclaimer=emRecupel vous aide à facturer et à déclarer la cotisation Recupel ; il ne remplace pas votre vérification. Le classement des produits, l'origine des appareils et les chiffres déclarés restent sous votre responsabilité. Vérifiez les codes dans la liste officielle et contrôlez le rapport avant toute déclaration.
+
+# Configuration
+RecupelDefaultOrigin=Origine par défaut des produits
+RecupelDefaultOriginHelp=Origine des produits classés sans origine propre. Une entreprise mixte (une partie importée, une partie achetée en Belgique) précise l'origine produit par produit.
+RecupelFromProfile=Selon le profil (%s)
+RecupelDisplayRules=Affichage de la cotisation
+RecupelDisplayRulesHelp=Règle Recupel (FAQ 2.13) : pour un appareil à cotisation « tout compris » vendu à un revendeur d'appareils électriques, la cotisation est mentionnée séparément pour chaque appareil. Dans les autres cas, la mention « cotisation Recupel incluse » suffit ; une ligne séparée reste permise. Chaque client peut avoir son propre réglage (champ « Affichage de la cotisation Recupel » de la fiche tiers).
+RecupelCustomer=Client
+RecupelLegalObligation=obligatoire
+RecupelOutsideBelgium=Hors Belgique
+RecupelNoFee=Pas de cotisation (l'appareil n'est pas mis sur le marché belge)
+RecupelDocumentsAndComputation=Documents et calcul
+RecupelOnPropal=Cotisation sur les devis
+RecupelOnOrder=Cotisation sur les commandes
+RecupelOnInvoice=Cotisation sur les factures et avoirs
+RecupelPriceBaseTTC=Lignes de cotisation en base TVAC
+RecupelPriceBaseTTCHelp=Le barème officiel publie un montant rond TVAC (10,00 €) : la ligne est créée à partir de ce montant pour que le client paie 10,00 € et non 9,99 €. S'applique quand la TVA de la ligne est de 21 % ; sinon la ligne part du montant HTVA.
+RecupelCountryRule=Clients hors Belgique
+RecupelCountryRuleHelp=La cotisation n'est pas due sur un appareil livré hors de Belgique. Le pays retenu est celui du contact de livraison du document, sinon celui du client.
+RecupelCountryRuleBE=Pas de cotisation hors Belgique (recommandé)
+RecupelCountryRuleAll=Cotisation pour tous les clients
+RecupelFeeProduct=Service des lignes de cotisation
+RecupelFeeProductHelp=Les lignes de cotisation portent ce service : son libellé traduit apparaît sur les documents et son compte comptable (sous-compte du 70 selon l'avis CNC 2009/9) ventile la cotisation.
+RecupelFeeProductAccounting=réglez son compte comptable sur sa fiche
+RecupelLineTemplate=Description de la ligne (%s)
+RecupelLineTemplateHelp=Variables : {CODE}, {LABEL} (libellé officiel), {AMOUNT} (tarif HTVA), {UNITS}. Vide : valeur par défaut.
+RecupelDiagnostic=Diagnostic
+RecupelDbVersion=Version de la base (enregistrée / attendue)
+RecupelSchema=Structure de la base
+RecupelSchemaOk=complète
+RecupelScalesLoaded=Barèmes chargés (dates de début)
+RecupelRepair=Vérifier et réparer la base
+RecupelRepairDone=Migrations rejouées (%s opérations).
+RecupelRepairErrors=Certaines étapes ont échoué.
+RecupelSources=Sources
+RecupelSourcesText=Barèmes et règles repris des publications officielles :
+RecupelBack=Retour
+RecupelOptOut=Cotisations retirées à la main
+RecupelMigrationFailed=Les migrations automatiques ont échoué (%s) et ne sont plus relancées à chaque page. Consultez le journal Dolibarr puis cliquez « Vérifier et réparer la base ».

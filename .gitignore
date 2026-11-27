@@ -1,0 +1,35 @@
+# Composer
+/vendor/
+composer.lock
+
+# PHPUnit
+.phpunit.result.cache
+/tests/results/
+/tests/output/
+
+# Build
+/build/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Logs / temp
+*.log
+/temp/
+
+# Local dev
+.env
+.env.local
+
+# Release output
+/dist/
+
+# Python
+__pycache__/
+*.pyc

@@ -1,0 +1,256 @@
+# Copyright (C) 2026 E-dem SRL <support@e-dem.com>
+# GPL-3.0-or-later
+# emRecupel — English
+
+# Module
+Module491415Name=emRecupel
+Module491415Desc=Belgian Recupel fee (WEEE) on proposals, orders and invoices, and declaration support
+Permission49141501=Read Recupel data (scale, product codes, document analysis)
+Permission49141502=Classify products and recalculate the Recupel fee of documents
+Permission49141503=Set up emRecupel and import Recupel scales
+Permission49141504=Read the Recupel declaration report
+Recupel=Recupel
+EmrecupelSetup=emRecupel setup
+EmrecupelCatalog=Recupel scale
+License=License
+Publisher=Publisher
+
+# Menus and tabs
+RecupelProductsToClassify=Products to classify
+RecupelImportClassification=CSV import / export
+RecupelScale=Scale
+RecupelSwitchAssistant=Switch assistant
+RecupelDeclaration=Recupel declaration
+
+# Extrafields
+RecupelRole=Recupel role
+RecupelRoleHelp=Reseller: the customer resells electrical appliances; for an appliance with an all-in fee, the fee must then be shown separately on the invoice. End user: company or consumer using the appliance. Exempt: no fee at all (for instance a Recupel member who exports).
+RecupelRoleEnduser=End user
+RecupelRoleReseller=Reseller of electrical appliances
+RecupelRoleExempt=Exempt from the fee
+RecupelDisplayOverride=Display of the Recupel fee
+RecupelDisplayOverrideHelp=Empty: rule of the setup. This choice cannot remove the separate line required for a reseller.
+RecupelLink=Recupel link
+RecupelCategory=Recupel category
+RecupelUnits=Appliances per sold unit
+
+# Display
+RecupelModeLine=Separate line
+RecupelModeIncluded=Included (mention under the line + total in the footer)
+RecupelModeFooter=Included (total in the footer only)
+RecupelModesExplained=Separate line: a "Recupel fee" line under the product, added to the total. Included: the product price already contains the fee; the PDF shows "Including Recupel fee: x.xx EUR incl. VAT/piece" under the line and the total in the footer. Nothing is added to the total in both "included" modes.
+RecupelMentionLine=Including Recupel fee: %s incl. VAT/piece (cat. %s)
+RecupelMentionFooter=Recupel fees included in the prices: %s incl. VAT
+RecupelMentionUsed=Recupel fee included (second-hand appliance already placed on the Belgian market).
+
+# Product
+RecupelStatus=Recupel status
+RecupelStatusNone=To classify
+RecupelStatusSubject=Subject
+RecupelStatusExempt=Not subject
+RecupelStatusHelp="Not subject": accessory supplied with an appliance, component without its own function (memory, motherboard, USB stick), home battery, solar panel, service… It tells a product outside the scope from a product not classified yet.
+RecupelOrigin=Origin
+RecupelOriginHelp=Imported or produced: you place it on the Belgian market and declare it to Recupel. Bought in Belgium: your Belgian supplier charged you the fee, you pass it on without declaring it. Belgian second-hand: already placed on the Belgian market, charging the fee is forbidden.
+RecupelOriginImport=Imported or produced
+RecupelOriginLocal=Bought in Belgium (fee paid)
+RecupelOriginUsed=Belgian second-hand (no fee)
+RecupelOriginDefault=Company default (%s)
+RecupelOriginDefaultShort=Company default
+RecupelOriginKeep=Keep origin
+RecupelWeight=Declarable weight
+RecupelWeightKg=Weight (kg)
+RecupelWeightHelp=Net weight of a professional appliance, declared with the number: product and accessories sold under the same reference, cables included, without packaging, manual or batteries. Empty: weight of the product card.
+RecupelWeightProduct=weight of the product card
+RecupelWeightMissing=Weight missing on some products
+RecupelCodes=Recupel codes
+RecupelCode=Code
+RecupelUse=Use
+RecupelUseHousehold=Household
+RecupelUsePro=Professional
+RecupelFeeType=Fee type
+RecupelFeeAllin=all-in
+RecupelFeeAdmin=administrative
+RecupelUnitsHelp=Number of subject appliances per sold unit: 4 for a luminaire supplied with 4 LED lamps (lamp code), 3 for a kit of 3 stand-alone cameras…
+RecupelRateAt=Rate on %s
+RecupelNoCode=No Recupel code
+RecupelAddCode=Add the code
+RecupelKitHelp=A luminaire carries the fee of the fitting and of each built-in LED or discharge lamp; appliances of a kit that work on their own are declared separately. Add one code per type of appliance.
+RecupelExemptNoCode=Product not subject: no fee is applied.
+RecupelInheritedFromParent=This variant has no classification of its own: it uses the one of the parent product.
+RecupelServiceNotice=This product is a service. Recupel only concerns electrical and electronic equipment.
+RecupelOfficialSearch=Official Recupel search engine
+
+# Products to classify
+RecupelClassifyHelp=Tick products then apply a Recupel code, the "not subject" status or an origin. The Dolibarr category filter classifies a whole family at once ("everything in Laptops = 2.4"). Nothing is classified automatically: check every code in the official list.
+RecupelSoldUnclassified=%s products sold in %s are not classified yet.
+RecupelShowThem=Show them
+RecupelOnlyGoods=Goods only
+RecupelOnlySoldThisYear=Sold this year
+RecupelSoldThisYear=Sold this year
+RecupelMassAssign=Assign the code
+RecupelMassExempt=Mark "not subject"
+RecupelMassOrigin=Change the origin
+RecupelMassUnclassify=Back to "to classify"
+RecupelReplaceCodes=replace existing codes
+RecupelMassDone=%s products updated
+
+# Import
+RecupelImportHelp=CSV file separated by semicolons, UTF-8: ref;code;quantity;origin. Several lines for the same reference give several codes. Code "exempt" = not subject. Origin: import, local, used (empty = company default). The codes of the file replace those of the product.
+RecupelCsvFile=File
+RecupelCsvPaste=Or paste the content
+RecupelCheckFile=Check
+RecupelCheckResult=Check result
+RecupelCheckLines=%s lines read.
+RecupelCheckOk=Valid file: %s products will be updated.
+RecupelImportDone=%s products classified.
+RecupelImportPartial=%s products classified, some lines were rejected.
+RecupelExportClassification=Export the product classification (CSV)
+
+# Scale
+RecupelScaleValidAt=Scale in force on
+RecupelScaleOf=Scale of %s
+RecupelScaleSources=Source: appliance lists published by Recupel.
+RecupelHistoryOf=History of %s
+RecupelPreviousScale=Previous scale (incl. VAT)
+RecupelImportScale=Import a scale
+RecupelImportScaleHelp=For a scale announced by Recupel (1 January or 1 July) without waiting for a module update. The new rate closes the previous one the day before it starts; nothing is deleted. The whole import is rejected at the first error.
+RecupelApplyScale=Import this scale
+RecupelScaleFileErrors=The file contains errors.
+RecupelScaleFileEmpty=No scale line in the file.
+RecupelScaleImported=Scale imported: %s categories, %s rates.
+RecupelScaleImportFailed=Import cancelled.
+RecupelScaleStart=Start date
+RecupelScaleCodes=Codes with a rate
+RecupelScaleExpected92=the official list has 92 codes
+RecupelScaleNewCodes=New codes
+RecupelScaleRemovedCodes=Codes missing from the file
+RecupelScaleChangedCodes=Codes whose rate changes
+RecupelScaleBigChanges=Changes above 50 %
+RecupelNoScale=No scale loaded.
+
+# Switch assistant
+RecupelSwitchTo=Target scale
+RecupelSwitchSummary=On %s: %s codes change, %s stay the same, %s codes added or removed.
+RecupelSwitchMovedCodes=2027 scale: dishwashers move from 4.1.2 (cooking) to 4.1.1 (washing and drying); code 1.50 (professional cooling) becomes an all-in fee. Check the products concerned.
+RecupelSwitchCodes=Codes that change
+RecupelSwitchProducts=Products of the catalogue whose fee changes
+RecupelSwitchNoProduct=No classified product is concerned.
+RecupelFeePerUnitAt=Fee per unit on %s (incl. VAT)
+RecupelDifference=Difference
+RecupelCheckDishwasher=Dishwasher? It moves to 4.1.1 in 2027.
+RecupelSwitchDocuments=Open proposals and orders concerned
+RecupelSwitchDocumentsHelp=Proposals and orders dated before the switch, not invoiced yet, that contain those products. On invoicing, the fee is recalculated at the rate of the invoice date.
+RecupelFeeAtDocDate=Fee at the document date
+RecupelFeeAtSwitch=Fee after the switch
+
+# Document tab
+RecupelDeliveryCountry=Delivery country
+RecupelExportNoFee=outside Belgium: no fee
+RecupelScaleDate=Date of the scale applied
+RecupelNotDraft=Validated document: it is never changed by the module.
+RecupelUnitRateTTC=Unit rate incl. VAT
+RecupelAmountTTC=Amount incl. VAT
+RecupelDecision=Decision
+RecupelDisplay=Display
+RecupelLinePresent=Line present
+RecupelLineMissing=Line missing: use "Recalculate"
+RecupelNothingOnDocument=No classified product on this document.
+RecupelTotalAsLines=Fees on separate lines
+RecupelTotalIncluded=Fees included in the prices
+RecupelRecalculate=Recalculate the Recupel fee
+RecupelRecalculateHelp=Rebuilds the fee lines from the products, the customer and the date, including the ones deleted by hand.
+RecupelRecalculated=Recalculation done (%s changes).
+RecupelRecalculateError=Error during the recalculation: %s
+RecupelLedgerOfInvoice=Appliances recorded for the declaration
+RecupelLedgerEmpty=No appliance recorded for this invoice.
+RecupelDeclaredUnits=Appliances
+RecupelDecision_apply=Fee due
+RecupelDecision_doctype_disabled=Document type disabled
+RecupelDecision_not_a_product_line=Not a product line
+RecupelDecision_no_category=No code
+RecupelDecision_category_inactive=Unknown or disabled code
+RecupelDecision_no_tariff=No rate at that date
+RecupelDecision_customer_exempt=Customer exempt
+RecupelDecision_export=Outside Belgium
+RecupelDecision_used_goods=Belgian second-hand: no fee
+RecupelDecision_opted_out=Removed by hand
+RecupelDecision_zero_qty=Zero quantity
+RecupelDecision_product_exempt=Product not subject
+RecupelBucket=Declaration column
+RecupelBucket_market=Brought to market
+RecupelBucket_returnable=Returnable (export)
+RecupelBucket_control=Bought and sold in Belgium (control)
+RecupelBucket_none=Not declared
+
+# Declaration
+RecupelQuarter=Quarter
+RecupelProfile=Company profile
+RecupelProfileReseller=Reseller
+RecupelProfileResellerHelp=you buy in Belgium and sell in Belgium; you pass the fee on without declaring anything (control statement only).
+RecupelProfileExporter=Reseller who exports
+RecupelProfileExporterHelp=affiliated to Recupel to get the fee of appliances bought in Belgium and sold abroad refunded ("Returnable" column).
+RecupelProfileProducer=Importer or manufacturer
+RecupelProfileProducerHelp=Recupel member: you declare the imported or produced appliances placed on the Belgian market, and the exports of appliances bought in Belgium.
+RecupelDeadline=Declaration deadline
+RecupelDeadlineHelp=the 20th of the month after the period
+RecupelReportHypotheses=Assumptions: validated invoices only (drafts excluded, replaced invoice excluded in favour of the replacement invoice), credit notes deducted, invoice date as taxable event, origin and codes recorded when each invoice was validated, country of the delivery contact or else of the customer, amount estimated at the rate of each invoice date.
+RecupelReportUnclassified=%s products sold in the period are not classified: they are not in this report.
+RecupelAdminCapReached=The administrative fees of %2$s reach %1$s: they are capped at 10,000 EUR per year and per member.
+RecupelBlockHousehold=Household appliances
+RecupelBlockProfessional=Professional appliances
+RecupelBroughtToMarket=Brought to market (number)
+RecupelReturnable=Returnable (number)
+RecupelSoldBePassedOn=Bought and sold in Belgium
+RecupelSoldBePassedOnHelp=Appliances bought from a Belgian supplier and resold in Belgium: the fee was passed on, nothing to declare.
+RecupelEstimatedHT=Estimated amount excl. VAT
+RecupelFeesPassedOnHT=Fees passed on excl. VAT
+RecupelTotalDue=Estimated fees (brought to market)
+RecupelTotalRefund=Estimated refund (Returnable)
+RecupelNetEstimate=Estimated net amount
+RecupelResellerNoDeclaration="Reseller" profile: you have no declaration to make. This table is a control statement of the fees passed on to your customers; compare it with the fees charged by your suppliers.
+RecupelDetailOf=Detail of code %s — %s
+RecupelExportCsv=Export as CSV
+RecupelRebuildLedger=Rebuild the period
+RecupelRebuildLedgerHelp="Rebuild" reads again every validated invoice of the period with the current product classification (after a late classification or an upgrade from version 1).
+RecupelLedgerRebuilt=%s invoices read, %s lines recorded.
+RecupelPortalHelp=The declaration is entered on the Recupel portal:
+RecupelDisclaimer=emRecupel helps you invoice and declare the Recupel fee; it does not replace your own check. Product classification, appliance origin and declared figures remain your responsibility. Check the codes in the official list and review the report before any declaration.
+
+# Setup
+RecupelDefaultOrigin=Default origin of products
+RecupelDefaultOriginHelp=Origin of classified products without their own origin. A mixed company (partly imported, partly bought in Belgium) sets the origin product by product.
+RecupelFromProfile=From the profile (%s)
+RecupelDisplayRules=Display of the fee
+RecupelDisplayRulesHelp=Recupel rule (FAQ 2.13): for an appliance with an all-in fee sold to a reseller of electrical appliances, the fee is shown separately for each appliance. In the other cases, "Recupel fee included" is enough; a separate line remains allowed. Each customer can have its own setting (field "Display of the Recupel fee" of the third party).
+RecupelCustomer=Customer
+RecupelLegalObligation=mandatory
+RecupelOutsideBelgium=Outside Belgium
+RecupelNoFee=No fee (the appliance is not placed on the Belgian market)
+RecupelDocumentsAndComputation=Documents and computation
+RecupelOnPropal=Fee on proposals
+RecupelOnOrder=Fee on orders
+RecupelOnInvoice=Fee on invoices and credit notes
+RecupelPriceBaseTTC=Fee lines priced VAT included
+RecupelPriceBaseTTCHelp=The official scale publishes a round amount incl. VAT (10.00 EUR): the line is built from that amount so that the customer pays 10.00 and not 9.99. Applies when the line VAT is 21 %; otherwise the line starts from the amount excl. VAT.
+RecupelCountryRule=Customers outside Belgium
+RecupelCountryRuleHelp=No fee is due on an appliance delivered outside Belgium. The country used is the one of the delivery contact of the document, otherwise the one of the customer.
+RecupelCountryRuleBE=No fee outside Belgium (recommended)
+RecupelCountryRuleAll=Fee for every customer
+RecupelFeeProduct=Service of the fee lines
+RecupelFeeProductHelp=Fee lines carry this service: its translated label is printed on documents and its accounting account (sub-account of 70 according to CNC advice 2009/9) books the fee.
+RecupelFeeProductAccounting=set its accounting account on its card
+RecupelLineTemplate=Line description (%s)
+RecupelLineTemplateHelp=Variables: {CODE}, {LABEL} (official label), {AMOUNT} (rate excl. VAT), {UNITS}. Empty: default value.
+RecupelDiagnostic=Diagnostic
+RecupelDbVersion=Database version (stored / expected)
+RecupelSchema=Database structure
+RecupelSchemaOk=complete
+RecupelScalesLoaded=Scales loaded (start dates)
+RecupelRepair=Check and repair the database
+RecupelRepairDone=Migrations replayed (%s operations).
+RecupelRepairErrors=Some steps failed.
+RecupelSources=Sources
+RecupelSourcesText=Scales and rules taken from the official publications:
+RecupelBack=Back
+RecupelOptOut=Fees removed by hand
+RecupelMigrationFailed=The automatic migrations failed (%s) and are no longer retried on every page. Check the Dolibarr log, then click "Check and repair the database".

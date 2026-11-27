@@ -1,0 +1,256 @@
+# Copyright (C) 2026 E-dem SRL <support@e-dem.com>
+# GPL-3.0-or-later
+# emRecupel — Nederlands
+
+# Module
+Module491415Name=emRecupel
+Module491415Desc=Belgische Recupelbijdrage (AEEA) op offertes, bestellingen en facturen, en hulp bij de aangifte
+Permission49141501=Recupelgegevens raadplegen (tarieflijst, productcodes, analyse van documenten)
+Permission49141502=Producten indelen en de Recupelbijdrage van documenten herberekenen
+Permission49141503=emRecupel instellen en Recupeltarieflijsten importeren
+Permission49141504=Het Recupel-aangifterapport raadplegen
+Recupel=Recupel
+EmrecupelSetup=Instellingen emRecupel
+EmrecupelCatalog=Recupeltarieflijst
+License=Licentie
+Publisher=Uitgever
+
+# Menu's en tabbladen
+RecupelProductsToClassify=In te delen producten
+RecupelImportClassification=CSV-import / -export
+RecupelScale=Tarieflijst
+RecupelSwitchAssistant=Overgangsassistent
+RecupelDeclaration=Recupel-aangifte
+
+# Extravelden
+RecupelRole=Recupelrol
+RecupelRoleHelp=Verdeler: de klant verkoopt elektrische toestellen door; voor een toestel met een all-inbijdrage moet de bijdrage dan apart op de factuur staan. Eindgebruiker: bedrijf of particulier dat het toestel gebruikt. Vrijgesteld: geen bijdrage (bijvoorbeeld een Recupellid dat uitvoert).
+RecupelRoleEnduser=Eindgebruiker
+RecupelRoleReseller=Verdeler van elektrische toestellen
+RecupelRoleExempt=Vrijgesteld van bijdrage
+RecupelDisplayOverride=Weergave van de Recupelbijdrage
+RecupelDisplayOverrideHelp=Leeg: regel uit de instellingen. Deze keuze kan de verplichte aparte lijn voor een verdeler niet weghalen.
+RecupelLink=Recupelkoppeling
+RecupelCategory=Recupelcategorie
+RecupelUnits=Toestellen per verkochte eenheid
+
+# Weergave
+RecupelModeLine=Aparte lijn
+RecupelModeIncluded=Inbegrepen (vermelding onder de lijn + totaal onderaan)
+RecupelModeFooter=Inbegrepen (alleen totaal onderaan)
+RecupelModesExplained=Aparte lijn: een lijn "Recupelbijdrage" onder het product, opgeteld bij het totaal. Inbegrepen: de productprijs bevat de bijdrage al; de pdf vermeldt "Waarvan Recupelbijdrage: x,xx EUR incl. btw/stuk" onder de lijn en het totaal onderaan. In beide "inbegrepen"-modi wordt niets bij het totaal opgeteld.
+RecupelMentionLine=Waarvan Recupelbijdrage: %s incl. btw/stuk (cat. %s)
+RecupelMentionFooter=Recupelbijdragen inbegrepen in de prijzen: %s incl. btw
+RecupelMentionUsed=Recupelbijdrage inbegrepen (tweedehandstoestel dat al op de Belgische markt werd gebracht).
+
+# Product
+RecupelStatus=Recupelstatus
+RecupelStatusNone=In te delen
+RecupelStatusSubject=Onderworpen
+RecupelStatusExempt=Niet onderworpen
+RecupelStatusHelp="Niet onderworpen": accessoire geleverd bij een toestel, onderdeel zonder eigen functie (geheugen, moederbord, USB-stick), thuisbatterij, zonnepaneel, dienst… Zo onderscheidt u een product buiten het toepassingsgebied van een nog niet ingedeeld product.
+RecupelOrigin=Herkomst
+RecupelOriginHelp=Ingevoerd of geproduceerd: u brengt het op de Belgische markt en geeft het aan bij Recupel. Gekocht in België: uw Belgische leverancier rekende u de bijdrage aan, u rekent ze door zonder aangifte. Belgische tweedehands: al op de Belgische markt gebracht, de bijdrage aanrekenen is verboden.
+RecupelOriginImport=Ingevoerd of geproduceerd
+RecupelOriginLocal=Gekocht in België (bijdrage betaald)
+RecupelOriginUsed=Belgische tweedehands (geen bijdrage)
+RecupelOriginDefault=Standaard van het bedrijf (%s)
+RecupelOriginDefaultShort=Standaard van het bedrijf
+RecupelOriginKeep=Herkomst behouden
+RecupelWeight=Aan te geven gewicht
+RecupelWeightKg=Gewicht (kg)
+RecupelWeightHelp=Nettogewicht van een professioneel toestel, aan te geven samen met het aantal: product en accessoires onder dezelfde referentie, kabels inbegrepen, zonder verpakking, handleiding of batterijen. Leeg: gewicht van de productfiche.
+RecupelWeightProduct=gewicht van de productfiche
+RecupelWeightMissing=Gewicht ontbreekt bij sommige producten
+RecupelCodes=Recupelcodes
+RecupelCode=Code
+RecupelUse=Gebruik
+RecupelUseHousehold=Huishoudelijk
+RecupelUsePro=Professioneel
+RecupelFeeType=Soort bijdrage
+RecupelFeeAllin=all-in
+RecupelFeeAdmin=administratief
+RecupelUnitsHelp=Aantal onderworpen toestellen per verkochte eenheid: 4 voor een armatuur met 4 ledlampen (code van de lamp), 3 voor een kit van 3 zelfstandige camera's…
+RecupelRateAt=Tarief op %s
+RecupelNoCode=Geen Recupelcode
+RecupelAddCode=Code toevoegen
+RecupelKitHelp=Een armatuur draagt de bijdrage van de armatuur en van elke ingebouwde led- of gasontladingslamp; toestellen van een kit die zelfstandig werken, worden apart aangegeven. Voeg één code per soort toestel toe.
+RecupelExemptNoCode=Product niet onderworpen: er wordt geen bijdrage toegepast.
+RecupelInheritedFromParent=Deze variant heeft geen eigen indeling: ze neemt die van het hoofdproduct over.
+RecupelServiceNotice=Dit product is een dienst. Recupel betreft alleen elektrische en elektronische apparatuur.
+RecupelOfficialSearch=Officiële zoekmachine van Recupel
+
+# In te delen producten
+RecupelClassifyHelp=Vink producten aan en pas een Recupelcode, de status "niet onderworpen" of een herkomst toe. Met de filter op Dolibarr-categorie deelt u een hele familie in één keer in ("alles in Laptops = 2.4"). Niets wordt automatisch ingedeeld: controleer elke code in de officiële lijst.
+RecupelSoldUnclassified=%s producten verkocht in %s zijn nog niet ingedeeld.
+RecupelShowThem=Toon ze
+RecupelOnlyGoods=Alleen goederen
+RecupelOnlySoldThisYear=Dit jaar verkocht
+RecupelSoldThisYear=Dit jaar verkocht
+RecupelMassAssign=Code toekennen
+RecupelMassExempt=Markeren als "niet onderworpen"
+RecupelMassOrigin=Herkomst wijzigen
+RecupelMassUnclassify=Terug naar "in te delen"
+RecupelReplaceCodes=bestaande codes vervangen
+RecupelMassDone=%s producten bijgewerkt
+
+# Import
+RecupelImportHelp=CSV-bestand met puntkomma's, UTF-8: ref;code;aantal;herkomst. Meerdere lijnen voor dezelfde referentie geven meerdere codes. Code "exempt" = niet onderworpen. Herkomst: import, local, used (leeg = standaard van het bedrijf). De codes uit het bestand vervangen die van het product.
+RecupelCsvFile=Bestand
+RecupelCsvPaste=Of plak de inhoud
+RecupelCheckFile=Controleren
+RecupelCheckResult=Resultaat van de controle
+RecupelCheckLines=%s lijnen gelezen.
+RecupelCheckOk=Geldig bestand: %s producten worden bijgewerkt.
+RecupelImportDone=%s producten ingedeeld.
+RecupelImportPartial=%s producten ingedeeld, sommige lijnen werden geweigerd.
+RecupelExportClassification=De indeling van de producten exporteren (CSV)
+
+# Tarieflijst
+RecupelScaleValidAt=Tarieflijst geldig op
+RecupelScaleOf=Tarieflijst van %s
+RecupelScaleSources=Bron: toestellenlijsten gepubliceerd door Recupel.
+RecupelHistoryOf=Geschiedenis van %s
+RecupelPreviousScale=Vorige tarieflijst (incl. btw)
+RecupelImportScale=Een tarieflijst importeren
+RecupelImportScaleHelp=Voor een tarieflijst die Recupel aankondigt (1 januari of 1 juli) zonder op een update van de module te wachten. Het nieuwe tarief sluit het vorige af op de dag vóór zijn begindatum; er wordt niets gewist. Bij de eerste fout wordt de hele import geweigerd.
+RecupelApplyScale=Deze tarieflijst importeren
+RecupelScaleFileErrors=Het bestand bevat fouten.
+RecupelScaleFileEmpty=Geen tarieflijn in het bestand.
+RecupelScaleImported=Tarieflijst geïmporteerd: %s categorieën, %s tarieven.
+RecupelScaleImportFailed=Import geannuleerd.
+RecupelScaleStart=Begindatum
+RecupelScaleCodes=Codes met een tarief
+RecupelScaleExpected92=de officiële lijst telt 92 codes
+RecupelScaleNewCodes=Nieuwe codes
+RecupelScaleRemovedCodes=Codes die in het bestand ontbreken
+RecupelScaleChangedCodes=Codes waarvan het tarief wijzigt
+RecupelScaleBigChanges=Wijzigingen van meer dan 50 %
+RecupelNoScale=Geen tarieflijst geladen.
+
+# Overgangsassistent
+RecupelSwitchTo=Doeltarieflijst
+RecupelSwitchSummary=Op %s: %s codes wijzigen, %s blijven gelijk, %s codes toegevoegd of verdwenen.
+RecupelSwitchMovedCodes=Tarieflijst 2027: vaatwassers gaan van 4.1.2 (koken) naar 4.1.1 ((af)wassen en drogen); code 1.50 (professionele koeling) wordt een all-inbijdrage. Controleer de betrokken producten.
+RecupelSwitchCodes=Codes die wijzigen
+RecupelSwitchProducts=Producten uit de catalogus waarvan de bijdrage wijzigt
+RecupelSwitchNoProduct=Geen enkel ingedeeld product is betrokken.
+RecupelFeePerUnitAt=Bijdrage per eenheid op %s (incl. btw)
+RecupelDifference=Verschil
+RecupelCheckDishwasher=Vaatwasser? Die gaat in 2027 naar 4.1.1.
+RecupelSwitchDocuments=Betrokken openstaande offertes en bestellingen
+RecupelSwitchDocumentsHelp=Offertes en bestellingen gedateerd vóór de overgang, nog niet gefactureerd, die deze producten bevatten. Bij facturatie wordt de bijdrage herberekend tegen het tarief van de factuurdatum.
+RecupelFeeAtDocDate=Bijdrage op de documentdatum
+RecupelFeeAtSwitch=Bijdrage na de overgang
+
+# Tabblad document
+RecupelDeliveryCountry=Leveringsland
+RecupelExportNoFee=buiten België: geen bijdrage
+RecupelScaleDate=Datum van de toegepaste tarieflijst
+RecupelNotDraft=Gevalideerd document: het wordt nooit door de module gewijzigd.
+RecupelUnitRateTTC=Eenheidstarief incl. btw
+RecupelAmountTTC=Bedrag incl. btw
+RecupelDecision=Beslissing
+RecupelDisplay=Weergave
+RecupelLinePresent=Lijn aanwezig
+RecupelLineMissing=Lijn ontbreekt: gebruik "Herberekenen"
+RecupelNothingOnDocument=Geen ingedeeld product op dit document.
+RecupelTotalAsLines=Bijdragen op aparte lijnen
+RecupelTotalIncluded=Bijdragen inbegrepen in de prijzen
+RecupelRecalculate=De Recupelbijdrage herberekenen
+RecupelRecalculateHelp=Maakt de bijdragelijnen opnieuw aan volgens de producten, de klant en de datum, ook de lijnen die met de hand werden verwijderd.
+RecupelRecalculated=Herberekening klaar (%s wijzigingen).
+RecupelRecalculateError=Fout tijdens de herberekening: %s
+RecupelLedgerOfInvoice=Toestellen geregistreerd voor de aangifte
+RecupelLedgerEmpty=Geen toestel geregistreerd voor deze factuur.
+RecupelDeclaredUnits=Toestellen
+RecupelDecision_apply=Bijdrage verschuldigd
+RecupelDecision_doctype_disabled=Documenttype uitgeschakeld
+RecupelDecision_not_a_product_line=Geen productlijn
+RecupelDecision_no_category=Geen code
+RecupelDecision_category_inactive=Onbekende of uitgeschakelde code
+RecupelDecision_no_tariff=Geen tarief op die datum
+RecupelDecision_customer_exempt=Klant vrijgesteld
+RecupelDecision_export=Buiten België
+RecupelDecision_used_goods=Belgische tweedehands: geen bijdrage
+RecupelDecision_opted_out=Met de hand verwijderd
+RecupelDecision_zero_qty=Hoeveelheid nul
+RecupelDecision_product_exempt=Product niet onderworpen
+RecupelBucket=Kolom van de aangifte
+RecupelBucket_market=Op de markt gebracht
+RecupelBucket_returnable=Returnable (uitvoer)
+RecupelBucket_control=Gekocht en verkocht in België (controle)
+RecupelBucket_none=Niet aangegeven
+
+# Aangifte
+RecupelQuarter=Kwartaal
+RecupelProfile=Profiel van het bedrijf
+RecupelProfileReseller=Verdeler
+RecupelProfileResellerHelp=u koopt in België en verkoopt in België; u rekent de bijdrage door zonder aangifte (alleen controleoverzicht).
+RecupelProfileExporter=Verdeler die uitvoert
+RecupelProfileExporterHelp=aangesloten bij Recupel om de bijdrage terug te krijgen van toestellen die in België werden gekocht en in het buitenland verkocht (kolom "Returnable").
+RecupelProfileProducer=Invoerder of producent
+RecupelProfileProducerHelp=lid van Recupel: u geeft de ingevoerde of geproduceerde toestellen aan die op de Belgische markt worden gebracht, en de uitvoer van in België gekochte toestellen.
+RecupelDeadline=Uiterste datum van de aangifte
+RecupelDeadlineHelp=de 20e van de maand na de periode
+RecupelReportHypotheses=Aannames: alleen gevalideerde facturen (concepten uitgesloten, vervangen factuur uitgesloten ten voordele van de vervangende factuur), creditnota's afgetrokken, factuurdatum als belastbaar feit, herkomst en codes vastgelegd bij de validatie van elke factuur, land van het leveringscontact of anders van de klant, bedrag geraamd tegen het tarief op de datum van elke factuur.
+RecupelReportUnclassified=%s producten verkocht in de periode zijn niet ingedeeld: ze staan niet in dit rapport.
+RecupelAdminCapReached=De administratieve bijdragen van %2$s bereiken %1$s: ze zijn begrensd op 10.000 EUR per jaar en per lid.
+RecupelBlockHousehold=Huishoudelijke toestellen
+RecupelBlockProfessional=Professionele toestellen
+RecupelBroughtToMarket=Op de markt gebracht (aantal)
+RecupelReturnable=Returnable (aantal)
+RecupelSoldBePassedOn=Gekocht en verkocht in België
+RecupelSoldBePassedOnHelp=Toestellen gekocht bij een Belgische leverancier en in België doorverkocht: de bijdrage werd doorgerekend, niets aan te geven.
+RecupelEstimatedHT=Geraamd bedrag excl. btw
+RecupelFeesPassedOnHT=Doorgerekende bijdragen excl. btw
+RecupelTotalDue=Geraamde bijdragen (op de markt gebracht)
+RecupelTotalRefund=Geraamde terugbetaling (Returnable)
+RecupelNetEstimate=Geraamd nettobedrag
+RecupelResellerNoDeclaration=Profiel "verdeler": u hoeft geen aangifte te doen. Deze tabel is een controleoverzicht van de bijdragen die u aan uw klanten doorrekende; vergelijk ze met de bijdragen die uw leveranciers aanrekenden.
+RecupelDetailOf=Detail van code %s — %s
+RecupelExportCsv=Exporteren als CSV
+RecupelRebuildLedger=De periode opnieuw opbouwen
+RecupelRebuildLedgerHelp="Opnieuw opbouwen" leest alle gevalideerde facturen van de periode opnieuw met de huidige indeling van de producten (na een late indeling of een update vanaf versie 1).
+RecupelLedgerRebuilt=%s facturen gelezen, %s lijnen vastgelegd.
+RecupelPortalHelp=De aangifte gebeurt op het Recupelportaal:
+RecupelDisclaimer=emRecupel helpt u de Recupelbijdrage te factureren en aan te geven; het vervangt uw eigen controle niet. De indeling van de producten, de herkomst van de toestellen en de aangegeven cijfers blijven uw verantwoordelijkheid. Controleer de codes in de officiële lijst en het rapport vóór elke aangifte.
+
+# Instellingen
+RecupelDefaultOrigin=Standaardherkomst van de producten
+RecupelDefaultOriginHelp=Herkomst van ingedeelde producten zonder eigen herkomst. Een gemengd bedrijf (deels ingevoerd, deels in België gekocht) stelt de herkomst per product in.
+RecupelFromProfile=Volgens het profiel (%s)
+RecupelDisplayRules=Weergave van de bijdrage
+RecupelDisplayRulesHelp=Recupelregel (FAQ 2.13): voor een toestel met een all-inbijdrage verkocht aan een verdeler van elektrische toestellen, wordt de bijdrage per toestel apart vermeld. In de andere gevallen volstaat "Recupelbijdrage inbegrepen"; een aparte lijn blijft toegestaan. Elke klant kan een eigen instelling hebben (veld "Weergave van de Recupelbijdrage" van de derde partij).
+RecupelCustomer=Klant
+RecupelLegalObligation=verplicht
+RecupelOutsideBelgium=Buiten België
+RecupelNoFee=Geen bijdrage (het toestel wordt niet op de Belgische markt gebracht)
+RecupelDocumentsAndComputation=Documenten en berekening
+RecupelOnPropal=Bijdrage op offertes
+RecupelOnOrder=Bijdrage op bestellingen
+RecupelOnInvoice=Bijdrage op facturen en creditnota's
+RecupelPriceBaseTTC=Bijdragelijnen inclusief btw
+RecupelPriceBaseTTCHelp=De officiële tarieflijst publiceert een rond bedrag incl. btw (10,00 EUR): de lijn wordt vanuit dat bedrag opgebouwd zodat de klant 10,00 betaalt en niet 9,99. Geldt wanneer de btw van de lijn 21 % is; anders vertrekt de lijn van het bedrag excl. btw.
+RecupelCountryRule=Klanten buiten België
+RecupelCountryRuleHelp=Op een toestel dat buiten België wordt geleverd, is geen bijdrage verschuldigd. Het gebruikte land is dat van het leveringscontact van het document, anders dat van de klant.
+RecupelCountryRuleBE=Geen bijdrage buiten België (aanbevolen)
+RecupelCountryRuleAll=Bijdrage voor alle klanten
+RecupelFeeProduct=Dienst van de bijdragelijnen
+RecupelFeeProductHelp=De bijdragelijnen dragen deze dienst: zijn vertaalde omschrijving staat op de documenten en zijn boekhoudrekening (subrekening van 70 volgens CBN-advies 2009/9) boekt de bijdrage.
+RecupelFeeProductAccounting=stel de boekhoudrekening in op de fiche
+RecupelLineTemplate=Omschrijving van de lijn (%s)
+RecupelLineTemplateHelp=Variabelen: {CODE}, {LABEL} (officiële omschrijving), {AMOUNT} (tarief excl. btw), {UNITS}. Leeg: standaardwaarde.
+RecupelDiagnostic=Diagnose
+RecupelDbVersion=Versie van de database (opgeslagen / verwacht)
+RecupelSchema=Structuur van de database
+RecupelSchemaOk=volledig
+RecupelScalesLoaded=Geladen tarieflijsten (begindata)
+RecupelRepair=De database controleren en herstellen
+RecupelRepairDone=Migraties opnieuw uitgevoerd (%s bewerkingen).
+RecupelRepairErrors=Sommige stappen zijn mislukt.
+RecupelSources=Bronnen
+RecupelSourcesText=Tarieflijsten en regels overgenomen uit de officiële publicaties:
+RecupelBack=Terug
+RecupelOptOut=Met de hand verwijderde bijdragen
+RecupelMigrationFailed=De automatische migraties zijn mislukt (%s) en worden niet meer bij elke pagina opnieuw gestart. Raadpleeg het Dolibarr-logboek en klik op "De database controleren en herstellen".

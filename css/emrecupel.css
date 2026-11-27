@@ -1,0 +1,60 @@
+/* emRecupel custom CSS */
+
+.emrecupel-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: #2e7d32;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.emrecupel-badge.exempt {
+    background-color: #757575;
+}
+
+.emrecupel-summary-box {
+    border: 1px solid #c8e6c9;
+    background-color: #e8f5e9;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 8px 0;
+}
+
+.emrecupel-summary-box h4 {
+    margin: 0 0 8px 0;
+    color: #1b5e20;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.emrecupel-tariff-table th {
+    background-color: #f1f8f4;
+}
+
+.emrecupel-wizard-step {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+
+.emrecupel-wizard-step.active {
+    background-color: #e8f5e9;
+    border-color: #2e7d32;
+}
+
+.emrecupel-wizard-step h3 {
+    color: #1b5e20;
+    margin-top: 0;
+}
+
+.emrecupel-help-trigger {
+    color: #1976d2;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 12px;
+}
