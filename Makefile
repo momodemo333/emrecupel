@@ -67,8 +67,8 @@ build-release:
 	@echo "$(GREEN)Building emRecupel v$(VERSION)...$(NC)"
 	@rm -rf $(BUILD_DIR)
 	@mkdir -p $(RELEASE_DIR) $(BUILD_DIR)/$(MODULE_NAME)
-	@for d in $(SHIP_DIRS); do if [ -d $$d ]; then cp -r $$d $(BUILD_DIR)/$(MODULE_NAME)/; fi; done
-	@cp $(SHIP_FILES) $(BUILD_DIR)/$(MODULE_NAME)/
+	@# Only files tracked by Git: an untracked local file can never reach the zip.
+	@git ls-files -z -- $(SHIP_DIRS) $(SHIP_FILES) | xargs -0 cp --parents -t $(BUILD_DIR)/$(MODULE_NAME)/
 	@find $(BUILD_DIR)/$(MODULE_NAME) \( -name '.git*' -o -name '.DS_Store' -o -name '*.swp' -o -name '*~' \) -prune -exec rm -rf {} +
 	@# README screenshots are for GitHub only, not needed at runtime.
 	@rm -rf $(BUILD_DIR)/$(MODULE_NAME)/docs/screenshots
