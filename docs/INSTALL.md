@@ -9,7 +9,7 @@
 
 ## Installation
 
-1. Télécharger `module_emrecupel-2.0.0.zip` depuis
+1. Télécharger `module_emrecupel-X.Y.Z.zip` depuis
    https://github.com/momodemo333/emrecupel/releases/latest et le décompresser
    dans `htdocs/custom/` : on obtient `htdocs/custom/emrecupel/`. Autre voie :
    `git clone https://github.com/momodemo333/emrecupel.git htdocs/custom/emrecupel`. (Ou *Configuration › Modules › Déployer un

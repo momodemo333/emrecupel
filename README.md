@@ -82,7 +82,7 @@ Requirements: Dolibarr **21 or later** (tested on 23.0.1 and 21.0.1), PHP
 **8.1 or later** (tested on 8.1 and 8.2), MySQL or MariaDB (PostgreSQL is not
 supported).
 
-1. Download `module_emrecupel-2.0.0.zip` from the
+1. Download `module_emrecupel-X.Y.Z.zip` from the
    [latest release](https://github.com/momodemo333/emrecupel/releases/latest) and
    unzip it into `htdocs/custom/` (you get `htdocs/custom/emrecupel/`), or:
    ```bash
