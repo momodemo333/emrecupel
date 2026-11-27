@@ -783,7 +783,7 @@ class EmrecupelDocumentSync
 				$sql .= ", '" . $this->db->escape($head['date']) . "', '" . $this->db->escape($fee['code']) . "', '" . $this->db->escape($fee['use_type']) . "', '" . $this->db->escape($fee['fee_type'] !== '' ? $fee['fee_type'] : 'allin') . "'";
 				$sql .= ", " . price2num($units, 'MU') . ", " . ($w === null ? "NULL" : price2num($w, 'MU'));
 				$sql .= ", '" . $this->db->escape($l['origin']) . "', '" . $this->db->escape($country) . "', " . ($export ? 1 : 0) . ", '" . $this->db->escape($bucket) . "'";
-				$sql .= ", " . ($rate === null ? "NULL" : price2num($rate, 'MU')) . ", " . ($rate === null ? "NULL" : price2num($rate * $units, 'MT'));
+				$sql .= ", " . ($rate === null ? "NULL" : price2num($rate, 'MU')) . ", " . ($rate === null ? "NULL" : sprintf('%.8F', EmrecupelFeePolicy::ledgerAmount((float) $rate, (float) $units)));
 				$sql .= ", '" . $this->db->escape($fee['decision']) . "', '" . $this->db->escape($fee['mode']) . "', '" . $now . "')";
 				if (!$this->db->query($sql)) {
 					$this->error = $this->db->lasterror();

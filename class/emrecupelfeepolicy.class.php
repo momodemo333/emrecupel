@@ -397,6 +397,21 @@ class EmrecupelFeePolicy
 	}
 
 	/**
+	 * Estimated Recupel amount (excl. VAT) of a declaration row: appliances ×
+	 * rate, kept with 8 decimals. Recupel bills the number of appliances of the
+	 * period × the rate, so the amount is rounded once, on the total, never per
+	 * invoice line (5 lines of 4 appliances at 0,1240 = 2,48, not 5 × 0,50).
+	 *
+	 * @param float $rate  Unit rate excl. VAT
+	 * @param float $units Signed number of appliances
+	 * @return float
+	 */
+	public static function ledgerAmount(float $rate, float $units): float
+	{
+		return round($rate * $units, 8);
+	}
+
+	/**
 	 * Number of appliances to declare for a line.
 	 *
 	 * @param float $qty   Quantity of the line

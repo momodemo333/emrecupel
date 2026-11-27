@@ -5,6 +5,23 @@ Toutes les modifications notables seront documentées ici.
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/),
 et ce projet adhère au [Semantic Versioning](https://semver.org/).
 
+## [2.0.1] - 2026-11-27
+
+### Fixed
+- Declaration report: the estimated amount of each code was the sum of amounts
+  rounded to 2 decimals **per invoice line**, which drifted from the number of
+  appliances × the rate (example: 5 invoices of 4 laptops, code 2.4 at
+  0,1240 € excl. VAT → 2,50 € instead of 20 × 0,1240 = 2,48 €). Amounts are now
+  stored with 8 decimals and rounded once, on the total. The invoice detail
+  shows them with up to 4 decimals.
+- The fee lines of documents are not affected (they are priced per line by
+  Dolibarr, as any invoice line).
+
+### Upgrade notes
+Replace the files: the 2.0.1 migration runs by itself on the next page load and
+recomputes the amounts already stored in the declaration ledger
+(`amount_ht = rate × units`); appliance counts and weights do not change.
+
 ## [2.0.0] - 2026-11-27
 
 Refonte complète du prototype 1.x. Version majeure : modèle de données,

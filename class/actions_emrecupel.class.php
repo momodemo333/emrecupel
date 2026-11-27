@@ -71,7 +71,7 @@ class ActionsEmrecupel
 			return 0;
 		}
 		// Literal version first: no class loaded on every page once up to date.
-		if (getDolGlobalString('EMRECUPEL_DB_VERSION') !== '2.0.0') {
+		if (getDolGlobalString('EMRECUPEL_DB_VERSION') !== '2.0.1') {
 			dol_include_once('/emrecupel/class/emrecupelmigrations.class.php');
 			if (getDolGlobalString('EMRECUPEL_DB_VERSION') !== EmrecupelMigrations::MODULE_VERSION) {
 				EmrecupelMigrations::runIfNeeded($this->db);

@@ -633,4 +633,21 @@ class EmrecupelFeePolicyTest extends TestCase
 		list(, $end) = EmrecupelFeePolicy::periodBounds('month', 2028, 2);
 		$this->assertSame('2028-03-20', EmrecupelFeePolicy::declarationDeadline($end));
 	}
+
+	/**
+	 * Regression 2.0.1: the estimated amount of the declaration is the number
+	 * of appliances × the rate, rounded once. Rounding every invoice line to
+	 * 2 decimals gave 5 × round(4 × 0,1240) = 2,50 instead of 20 × 0,1240 = 2,48.
+	 */
+	public function testLedgerAmountIsNotRoundedPerLine(): void
+	{
+		$this->assertEqualsWithDelta(0.496, EmrecupelFeePolicy::ledgerAmount(0.1240, 4), 1e-9);
+		$sum = 0.0;
+		for ($i = 0; $i < 5; $i++) {
+			$sum += EmrecupelFeePolicy::ledgerAmount(0.1240, 4);
+		}
+		$this->assertSame(2.48, round($sum, 2));
+		$this->assertEqualsWithDelta(-0.0826, EmrecupelFeePolicy::ledgerAmount(0.0826, -1), 1e-9);
+		$this->assertEqualsWithDelta(0.12345679, EmrecupelFeePolicy::ledgerAmount(0.123456789, 1), 1e-12);
+	}
 }

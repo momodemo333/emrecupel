@@ -539,6 +539,9 @@ while ($o3 = $db->fetch_object($r)) {
 }
 check('export of an imported fridge: not declared', isset($lg['1.1']) && $lg['1.1']->bucket === 'none');
 check('export of a laptop bought in BE: Returnable × 4', isset($lg['2.4']) && $lg['2.4']->bucket === 'returnable' && approx($lg['2.4']->units, 4));
+$ra = $db->query("SELECT amount_ht FROM " . MAIN_DB_PREFIX . "emrecupel_ledger WHERE fk_facture = " . $f8e->id . " AND code = '2.4'");
+$amt = (float) $db->fetch_object($ra)->amount_ht;
+check('ledger amount not rounded per line: 4 × 0,1240 = 0,4960 (not 0,50)', abs($amt - 0.496) < 0.000001, (string) $amt);
 
 // Belgian customer, delivery contact abroad.
 $ct = new Contact($db);

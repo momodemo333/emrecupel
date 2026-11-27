@@ -26,7 +26,7 @@ dol_include_once('/emrecupel/class/emrecupelmigrationhelper.class.php');
 class EmrecupelMigrations
 {
 	/** Keep in sync with modEmrecupel::$version */
-	const MODULE_VERSION = '2.0.0';
+	const MODULE_VERSION = '2.0.1';
 
 	/** Tables of the module, in creation order */
 	const TABLES = array('emrecupel_cat', 'emrecupel_rate', 'emrecupel_product', 'emrecupel_product_code', 'emrecupel_ledger');
@@ -56,6 +56,14 @@ class EmrecupelMigrations
 		});
 		$helper->addCallbackMigration('2.0.0', function ($db) {
 			return self::check(self::migrateFromV1($db), 'data of version 1.x');
+		});
+		// 2.0.1: amounts of the declaration ledger were rounded to 2 decimals per
+		// invoice line; recompute them from the stored rate and units.
+		$helper->addCallbackMigration('2.0.1', function ($db) {
+			if (!self::tableExists($db, 'emrecupel_ledger')) {
+				return true;
+			}
+			return self::check((bool) $db->query("UPDATE " . MAIN_DB_PREFIX . "emrecupel_ledger SET amount_ht = ROUND(rate_ht * units, 8) WHERE rate_ht IS NOT NULL"), 'ledger amounts 2.0.1');
 		});
 
 		return $helper;

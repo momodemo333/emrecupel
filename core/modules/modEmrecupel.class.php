@@ -46,7 +46,7 @@ class modEmrecupel extends DolibarrModules
 		$this->editor_url = 'https://www.e-dem.com';
 
 		// Keep in sync with EmrecupelMigrations::MODULE_VERSION.
-		$this->version = '2.0.0';
+		$this->version = '2.0.1';
 		$this->const_name = 'MAIN_MODULE_' . strtoupper($this->name);
 		$this->picto = 'fa-recycle';
 		// Plain-text file holding the latest released version (checked by Dolibarr on demand).

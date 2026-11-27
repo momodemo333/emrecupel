@@ -204,7 +204,7 @@ if ($detailCode !== '') {
 		$fac->type = (int) $o->type;
 		$tu += (float) $o->units;
 		print '<tr class="oddeven"><td>' . $fac->getNomUrl(1) . '</td><td>' . dol_print_date($db->jdate($o->date_doc), 'day') . '</td><td>' . dol_escape_htmltag($o->nom) . '</td><td>' . dol_escape_htmltag($o->pref) . '</td><td>' . dol_escape_htmltag($o->country_code) . '</td>';
-		print '<td class="right">' . price2num($o->units) . '</td><td class="right">' . ($o->weight_kg !== null ? price2num($o->weight_kg, 'MS') . ' kg' : '') . '</td><td class="right">' . ($o->amount_ht !== null ? price($o->amount_ht, 0, $langs, 1, -1, 2) : '') . '</td></tr>';
+		print '<td class="right">' . price2num($o->units) . '</td><td class="right">' . ($o->weight_kg !== null ? price2num($o->weight_kg, 'MS') . ' kg' : '') . '</td><td class="right">' . ($o->amount_ht !== null ? price($o->amount_ht, 0, $langs, 1, 2, 4) : '') . '</td></tr>';
 	}
 	print '<tr class="liste_total"><td colspan="5">' . $langs->trans('Total') . '</td><td class="right">' . price2num($tu) . '</td><td colspan="2"></td></tr>';
 	print '</table>';
